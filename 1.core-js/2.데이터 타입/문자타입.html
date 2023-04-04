@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<ul>
+    <li
+    ><a href="#">홈</a>
+    </li>
+</ul>
+
+    <script>
+        var greetongs;
+        greetongs = "안녕하세요";
+        greetongs = '하이'; //주로 많이 사용
+        gteetongs = `반갑습니다`  // 물결 기호버튼 그냥 누름
+        var ex_str = "그는 나에게 \"위험해!\" 라고 말했다."
+        var ex_str = '그는 나에게 "위험해!" 라고 말했다.'
+        // ""  '' 둘다 사용가능 그리고 ''많이 사용 
+
+//     var temp =<ul>
+//     <li
+//     ><a href="#">홈</a>
+//     </li>
+// </ul>
+
+var temp =`<ul>
+    <li
+    ><a href="#">홈</a>
+    </li>
+</ul>`;
+
+
+console.log(temp)
+// x템플릭 리터럴: ``으로 감싼 문자열은 
+// 공백과 들여쓰기 , 줄 개행 등을 모두 문자로 인정해줌
+console.log("---------------------------------------------------")
+
+
+var month = 12;
+    var day = 25;
+    var anni = '크리스마스';
+   
+    console.log(month + '월 ' + day + '일은 ' + anni + '입니다.');
+
+//템플릿 리터럴을 이용한 포맷팅 출력 방식 (ES6)
+console.log(`${month}월 ${day}일은 ${anni}입니다.`);
+    
+    </script>
+</body>
+</html>

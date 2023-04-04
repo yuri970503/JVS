@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+     <script>
+        // 자바에선 에러지만 자바스크립트는 에러가 안남
+        // 마지막에 선언된 것을 인식합니다.
+        // 하지만 일부러 이렇게 쓰지는 마세요.
+        var apple = '사과';
+        var apple = '애플'
+        console.log(apple)
+        // 변수가 같으면 안됨 근데 에러가 안남 마지막 선언한걸로 나타냄 인정함
+
+
+        var banana = '바나나';
+        var BANANA = '빠나나';
+        console.log(banana);
+        console.log(BANANA);
+
+        // var 700 = 365; 
+        // var 7num = 7;
+        // 숫자는 변수로 안됨  숫자로 시작하는것도 안됨
+        var num7 = 7;
+        var n7u7m7 = 7;
+        
+        
+        // var my-name = '홍길동'
+
+        var my_name = '홍길동';
+        var $my_name = '혿길동';
+
+        var myPoneNumber = '01012341234';  //camel  많이 사용됨 자바랑 똑같음
+        var my_Pone_Number = '01012341234';  //snake  
+        var MyPoneNumber = '01012341234';  //pascal  
+        var strMyPoneNumber = '01012341234';  //Hungarian  앞에 타입설정?  
+
+
+        var 과일 = '사과';
+        console.log(과일)  //가능함 문법은 영어임  그래서 권장 노노
+     </script>
+     
+
+
+    
+</body>
+</html>

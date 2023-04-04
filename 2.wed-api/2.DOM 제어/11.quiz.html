@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2 class="the-title">html 조작</h2>
+    <ul id="list">
+        <li class="obj1">list_2</li>
+        <li>list_3</li>
+        <li>list_4</li>
+        <li>list_5</li>
+    </ul>
+
+
+
+    <script>
+       
+
+        //1. class="the-title"인 요소의 자식요소를
+        //innerHTML을 사용하여 "<a href="#">요소 객체 조작</a>"로 교체.
+
+        //  const $the = document.getElementsByClassName('the-title');
+        //  $the.innerHTML += '<a href="#"> "요소 객체 조작" </a>';
+         
+
+        const $theTitle = document.getElementsByClassName('the-title');
+        $theTitle[0].innerHTML = '<a href="#">요소 객체 조작</a>';  //인덱스를 써두어야한다  메서드가 배열임
+
+
+        // const $theTitle = document.querySelector('.the-title');  이거로도 쓸 수 있다.
+
+
+
+
+
+
+
+        //2. class="obj1"인 요소의 텍스트를 "리스트_2"로 변경하세요.
+
+        // const $b =document.getElementsByClassName('obj1:ntn-chiled');
+        // $b.textContent = "리스트_2";
+        // console.log($b);
+
+                        //요소하나만 선택 그리고 선택자를 선택 그래서 .을 붙임
+        const $obj1 = document.querySelector('.obj1');
+        $obj1.textContent = '리스트_2';
+
+
+
+
+
+
+
+        //3. id="list"인 요소의 마지막 위치에 새 요소 <li>list_6</li>
+        //를 추가하세요.
+
+
+        
+        
+        // const $c = document.createElement('li');
+        // $c.textContent ='list_6';
+
+                              //li 요소 만드는것 메서드임
+        const $li6 = document.createElement('li');
+        $li6.textContent = 'list_6';
+        const $list = document.getElementById('list'); //list객체를 가져옴
+        $list.appendChild($li6); //추가
+
+
+
+
+
+
+
+
+        //4. id="list"인 요소의 첫 위치에 새 요소 "<li>list_1</li>"
+        //을 추가하세요.
+
+        // const $list2 =document.getElementById('list');
+        // const $d = document.createElement('li');
+        // $d.textContent = 'list_1'
+        // $list2.insertBefore($list_2,list_1);
+
+        const $li1 = document.createElement('li');
+        $li1.textContent = 'list_1';
+        $list.insertBefore($li1, $list.firstElementChild);
+
+
+
+
+
+
+
+
+        //5. class="obj1"인 요소를 깊은 복제 후에
+        //id="list"인 요소 마지막에 추가.
+
+
+
+        // const $e = document.getElementById();
+        // const $obj =$e.lastElementChild;
+
+        // const $deepClone= $obj.cloneNode(true);
+        // $e.appendChild($deepClone);
+
+
+        const $clone = $obj1.cloneNode(true);
+        $list.appendChild($clone);
+
+
+
+
+
+
+
+
+
+        //6. id="list"인 요소의 하위 li 요소 중 첫번째 요소 삭제
+
+
+        $list.removeChild($list.firstElementChild);
+
+        //7. id="list"인 요소의 전체 자식 요소 삭제
+
+
+        const $children = $list.children;
+        console.log($children);
+
+
+
+
+
+        // for(let $li of [...$children]){
+        //     $list.replaceChild($li);
+        // }
+
+
+
+        [...$children].forEach($li => $list.removeChild($li));
+
+
+
+        //이미 얻어놓은걸 사용해도 됨 !!! 햇갈리지 말것!
+        //innerHTML은 속도가 느려진다 기존의 돔객체를 갖다버리고 다시생성??? 해서 성능이 안좋다.
+        //remove 함수로도 간단하게 삭제할 수 있다 하지만 removeChild로 지우려면  반복문을 써야 한다!!
+    </script>
+
+
+</body>
+
+</html>

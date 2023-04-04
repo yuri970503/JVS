@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="fruits">
+
+    </ul>
+
+
+
+
+
+
+
+
+
+    <script>
+        //Live DOM: 사전에 미리 렌더링되어 있는 요소 노드.
+        const $fruits = document.getElementById('fruits');
+
+        //과일 이름 텍스트 배열
+        const fruitName = ['Apple', 'Banana', 'Grape', 'Orange'];
+
+
+        /*
+        # 아래 방법의 문제점
+        - 이미 활성화된 Live DOM에다가 반복해서 가상 DOM을
+        추가하는 행위는 메모리상 높은 코스트가 발생함.
+        - 활성화된 DOM을 변경조작하는 것은 가능한 한
+        횟수를 줄여줘야 합니다.
+        
+        for (let f of fruitName) {
+            const $li = document.createElement('li');
+            $li.textContent = f;
+            $fruits.appendChild($li);
+        }
+        
+        반복문 let은 바뀔때 쓰는것 이 방법은 권장하지 않는다. 메모리를 많이 쓰고 있어서. 
+         방식이 잘못된것아니다 컨테이너를 만들어서 라이브로 옮겨라 담아놓고 한번에 옮겨라.     위에 써있음.
+         밑에는 한번 위에는 4번 위에는 과부화가 올 가능성 높음. 그래서 한번에 옮기라는것. */
+
+
+        //가상의 부모 DOM 생성
+        //다른 노드를 담는 임시 컨테이너 역할을 하는 가상 DOM 객체
+        const $frag = document.createDocumentFragment();
+
+        for (let f of fruitName) {
+            const $li = document.createElement('li');
+            $li.textContent = f;
+            $frag.appendChild($li);
+        }
+
+        $fruits.appendChild($frag);
+
+    </script>
+</body>
+
+</html>

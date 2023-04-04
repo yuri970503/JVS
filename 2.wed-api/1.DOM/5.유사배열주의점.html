@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <style>
+        ul > li {
+            font-size: 30px;
+        }
+
+        .fruit {
+            color: red;
+        }
+
+    </style>
+
+
+
+  
+     <ul id="fruits">
+        <li class="fruit fruit">Apple</li>
+        <li class="fruit fruit">Banana</li>
+        <li class="fruit fruit">Grape</li>
+        <li class="fruit fruit">PineApple</li>
+    </ul>
+
+  <script>
+    //유사배열 NodeList 리턴
+    // const $elements = document.querySelectorAll('.fruit');
+
+//유사배열 HTMLCollection 리턴
+const $elements = document.getElementsByClassName('fruit');
+
+// 배열이 아니에요!
+// let $eke = $elements.pop(); 배열이 아니여서 사용할 수 없다.
+
+//유사배열 객체를 배열처럼 제어할 때는 순수 배열로 변경할 수 있다.
+// const realArray = Array.from($elements); 옛날거
+const realArray = [...$elements]; //ES6 구조분해 할당
+let $ele = realArray.pop();
+console.log($ele);
+console.log(realArray);
+
+
+//반복문 쓸때 배열로 바꿔서 하는걸 권장 배열릉 반복문 할때 of 배열을 위한 문법
+
+
+for (let $e of [...$elements]){
+    $e.style.fontStyle = 'italic';
+}
+  </script>
+</body>
+</html>

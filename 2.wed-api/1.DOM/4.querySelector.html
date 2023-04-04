@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul id="fruits">
+        <li class="fruit apple">Apple</li>
+        <li class="fruit banana">Banana</li>
+        <li class="fruit grape">Grape</li>
+        <li class="fruit pine">PineApple</li>
+    </ul>
+
+
+
+    <script>
+        // const $elem = document.querySelector('.banana');
+        // const $elem = document.querySelector('#fruits > li:nth-child(2)');
+        // const $elem = document.querySelector('li.apple + li');
+        const $elem = document.querySelector('li[class="fruit banana"]');
+        $elem.style.color = 'yellow';
+        //다양하게 지목할 수 있다 css선택자를 이용해서.위의 모두다 정상 작동 한다.
+
+        console.log($elem);
+
+
+        const $element = document.querySelectorAll('#fruits > li');  // 여러개의 요소를 가지고 올 수 있다 All을 쓰면 유사배열.
+        console.log($element);
+        
+        for (let $ele of element){
+            $ele.style.background = 'red';
+        }
+
+
+        
+        //없는 선택자 지목 시
+        //querySelector -> null
+        //querySelectorAll -> 빈 노드리스트 객체(유사배열 객체)가 리턴됨.
+        const $test = document.querySelector('.peach');
+        console.log($test);
+    </script>
+</body>
+</html>
