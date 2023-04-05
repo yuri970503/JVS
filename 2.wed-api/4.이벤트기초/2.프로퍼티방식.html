@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button type="button" id="btn">클릭하세요!</button>
+    <button type="button" id="btn2">마우스를 올리세요!</button>
+    <button type="button" id="btn3">마우스를 치우세요!</button>
+
+
+
+
+    <script>
+        //이벤트 핸들러 정의
+        function hello() {
+            alert('Hello!');
+        }
+
+
+    //요소취득
+        const $btn = document.getElementById('btn');
+        const $btn2 = document.getElementById('btn2');
+        const $btn3 = document.getElementById('btn3');
+
+
+        // $btn.onclick = hello;
+        //함수를 즉석에서 선언해도 동작을한다 미리 선언해도 되지만 나중에 선언해도 된다
+
+        $btn.onclick = function() {
+            alert('안녕안녕하세요~!');
+        }
+
+        $btn2.onmouseenter = function() {
+            alert('메롱~');
+        }
+
+        $btn3.onmouseleave = () => alert('마우스를 치웠습니다~');
+
+
+        //핸들러 제거
+        $btn3.onmouseleave = null;
+
+
+        //자바와 html을 완벽하게 분리할 수 있다. (장점)
+        //하나의요소에 중복실행이 안된다 이벤트 하나만 걸 수 가 있다. 마지막거만 실행됨(단점)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text">
+    <p class="msg"></p>
+    
+
+
+
+
+
+    <script>
+        
+        const $input = document.querySelector('input');
+        const $msg = document.querySelector('.msg');
+
+        $input.addEventListener('keyup', e => {
+            // console.log(e.key);
+            if(e.key === 'Enter') {
+                $msg.textContent = e.target.value;
+                e.target.value = '';
+            } else if(e.key === 'Escape') {
+                $msg.textContent = '';
+            }
+        });
+
+
+
+
+
+        // $input.addEventListener('keyup', e => {
+        //     console.log(e.keyCode);
+        //     if(e.keyCode === 13) {
+        //         $msg.textContent = e.target.value;
+        //         e.target.value = '';
+        //     } else if(e.keyCode === 27) {
+        //         $msg.textContent = '';
+        //     }
+        // });
+
+        //keyCode를 이용해서도 쓸 수 있다 구글링 해서 번호를 찾아서 입력하면된다 키보드번호가 있다. 
+        // 예)엔터-13번 
+    </script>
+</body>
+</html>

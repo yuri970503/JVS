@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="btn">클릭</button>
+
+
+
+
+
+    <script>
+        const $btn = document.getElementById('btn'); //요소 먼저 취득
+        function hello() {
+            alert('hello!');
+        }
+
+        $btn.addEventListener('click', function() {
+            alert('안녕하세요~');
+        });
+
+        $btn.addEventListener('click', hello);//이벤트 타입,이벤트 핸들러 선언
+
+        $btn.addEventListener('click', () => {
+            alert('world!');
+        }); //화살표함수..?
+
+        //동일한 타입의 이벤트를 여러개 걸 수 있다. 한 요소에 중복가능!!
+
+        //사용자입력양식 - 폼 요소 이벤트 
+        //키보드 이벤트 등 
+        // 이벤트 객체 활용!!!
+        
+        // pdf에 있음 참고 바람
+
+    </script>
+</body>
+
+</html>
